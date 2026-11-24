@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kranthi Chiluveru Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE work: a calm, credible personal portfolio for a product owner
+   IDEA a release board: every case study is a card that made it to "Released"
+   PICTURE a five-lane delivery board, discovery to released, cards are real projects
+   COLOUR sky #4fb3e8 field, white panels, ink #10223a, orange #ff7a1a for outcomes
+   TYPE Outfit 600 headings + Inter text
+   LAYOUT laptop: title band over the full-width board; phone: title, board lanes stacked, then sections */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#0b1726);--ink:light-dark(#10223a,#e6eef7);--soft:light-dark(#4a5b70,#a9b8c9);--sky:light-dark(#4fb3e8,#1d4f72);--skyink:light-dark(#0b2a44,#eaf6ff);--panel:light-dark(#ffffff,#122338);--line:light-dark(#d9e3ee,#24384f);--tint:light-dark(#eef7fd,#10263b);--acc:#ff7a1a;--accink:light-dark(#b24d00,#ffb27a)}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Outfit,system-ui,sans-serif;letter-spacing:-.02em;line-height:1.08;margin:0}
+h1{font-size:clamp(34px,5vw,52px);font-weight:700;text-wrap:balance}
+h2{font-size:clamp(26px,3.2vw,34px);font-weight:600;margin-bottom:8px}
+h3{font-size:20px;font-weight:600}
+p{margin:0 0 12px}
+a{color:inherit}
+.band{padding:clamp(28px,4vw,64px) max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:center;padding:12px max(5vw,16px)}
+nav b{font-family:Outfit,system-ui,sans-serif;font-size:18px;margin-right:auto}
+nav a{text-decoration:none;font-size:15px;color:var(--soft);padding:6px 0}
+nav a:hover,nav a:focus-visible{color:var(--ink)}
+.hero{background:var(--sky);color:var(--skyink)}
+.hero .top{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px;align-items:end;margin-bottom:28px}
+.lede{font-size:18px;max-width:62ch;margin-top:14px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(8.5em,1fr));gap:10px}
+.fact{background:color-mix(in srgb,var(--panel) 92%,transparent);color:var(--ink);border-radius:10px;padding:12px 14px}
+.fact strong{display:block;font-family:Outfit,system-ui,sans-serif;font-size:clamp(24px,3vw,30px);line-height:1.1;white-space:nowrap}
+.fact span{font-size:13px;color:var(--soft)}
+.board{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;background:color-mix(in srgb,var(--panel) 30%,transparent);border-radius:14px;padding:12px}
+.lane{background:color-mix(in srgb,var(--panel) 75%,transparent);border-radius:10px;padding:10px;display:flex;flex-direction:column;gap:8px;min-height:190px}
+.lane h4{margin:0 0 2px;font:600 14px Inter;color:var(--soft)}
+.lane.done{background:var(--panel);outline:2px solid var(--acc)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:9px 10px;font-size:14px;line-height:1.35;color:var(--ink)}
+.card small{display:block;color:var(--soft);font-size:13px;margin-top:3px}
+.card.ghost{opacity:.6;border-style:dashed}
+.done .card{border-left:4px solid var(--acc);text-decoration:none;display:block}
+.done .card:hover,.done .card:focus-visible{background:var(--tint)}
+.cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:22px}
+.case{border:1px solid var(--line);border-radius:12px;padding:22px;background:var(--panel)}
+.case.wide{grid-column:1/-1}
+.case dl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:6px 14px;margin:14px 0 0}
+.case dt{font-weight:600;color:var(--soft);font-size:14px}
+.case dd{margin:0}
+.out{color:var(--accink);font-weight:600}
+.where{color:var(--soft);font-size:14px;margin:4px 0 0}
+.how{background:var(--tint)}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(14em,1fr));gap:18px;margin-top:20px}
+.grid4 div{border-top:3px solid var(--sky);padding-top:12px}
+.sample{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:28px;align-items:start}
+.story{border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow:hidden}
+.story header{background:var(--ink);color:var(--bg);padding:12px 16px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:14px}
+.story .body{padding:16px}
+.story ul{margin:6px 0 12px;padding-left:20px}
+.story code{font-family:inherit;font-weight:600}
+.gk{white-space:pre;overflow-x:auto;font:14px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--tint);border:1px solid var(--line);border-radius:8px;padding:12px 14px;margin:8px 0 14px}
+.kw{color:var(--accink);font-weight:700}
+.note{font-size:13px;color:var(--soft)}
+.tl{display:grid;gap:0;margin-top:18px}
+.row{display:grid;grid-template-columns:11em minmax(0,1fr);gap:18px;padding:14px 0;border-top:1px solid var(--line)}
+.row time{color:var(--soft);font-size:14px;white-space:nowrap}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chips span{border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:14px;background:var(--panel)}
+.certs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.certs div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px}
+.certs strong{font-family:Outfit,system-ui,sans-serif;font-size:22px;display:block}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:36px}
+footer{background:var(--sky);color:var(--skyink)}
+footer .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px;align-items:center}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:10px;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:600}
+.btn.alt{background:var(--panel);color:var(--ink)}
+.btn:focus-visible,nav a:focus-visible,.card:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+@media(max-width:900px){.board{grid-template-columns:repeat(2,minmax(0,1fr))}.lane.done{grid-column:1/-1}}
+@media(max-width:720px){.hero .top,.cases,.sample,.two,footer .wrap{grid-template-columns:minmax(0,1fr)}.certs{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){.board{grid-template-columns:minmax(0,1fr)}.lane{min-height:0}.lane:not(.done) .card:nth-child(n+3){display:none}.grid4{grid-template-columns:minmax(0,1fr)}.row{grid-template-columns:minmax(0,1fr);gap:4px}nav a{font-size:14px}}
+@media(prefers-reduced-motion:no-preference){.done .card{animation:land .6s ease-out both}.done .card:nth-child(3){animation-delay:.1s}.done .card:nth-child(4){animation-delay:.2s}.done .card:nth-child(5){animation-delay:.3s}@keyframes land{from{transform:translateX(-14px);opacity:0}to{transform:none;opacity:1}}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>Kranthi Chiluveru</b><a href="#work">Work</a><a href="#approach">Approach</a><a href="#sample">Sample</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div></nav>
+
+<header class="hero band"><div class="wrap">
+  <div class="top">
+    <div>
+      <h1>Technical Product Owner, Program Manager and Business Analyst</h1>
+      <p class="lede">I turn messy business needs into clear requirements, prioritized backlogs and releases that work the first time. Nine years leading product and program delivery in healthcare and financial services, after an earlier career as a software developer.</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><strong>9 years</strong><span>product and program delivery</span></div>
+      <div class="fact"><strong>23,000</strong><span>employees on a platform I migrated</span></div>
+      <div class="fact"><strong>~8 sites</strong><span>plus a mobile app I managed</span></div>
+    </div>
+  </div>
+  <div class="board" aria-label="Delivery board showing selected projects as released work">
+    <div class="lane"><h4>Discovery</h4><div class="card">Stakeholder interviews<small>Users, operations, compliance</small></div><div class="card">Current-state process maps</div><div class="card ghost">Your next initiative</div></div>
+    <div class="lane"><h4>Requirements</h4><div class="card">PRDs and functional specs</div><div class="card">User stories with acceptance criteria</div><div class="card">Non-functional targets</div></div>
+    <div class="lane"><h4>Build</h4><div class="card">Backlog refinement and sprint planning</div><div class="card">Dependencies and risks</div><div class="card">API and integration reviews</div></div>
+    <div class="lane"><h4>UAT and readiness</h4><div class="card">Early validations and UAT demos</div><div class="card">Training and communications</div><div class="card">Go/no-go</div></div>
+    <div class="lane done"><h4>Released</h4>
+      <a class="card" href="#case-uat">Fewer defects through better UAT<small>BuzzRx</small></a>
+      <a class="card" href="#case-dash">Faster claims dashboards for a pharmacy client<small>BuzzRx</small></a>
+      <a class="card" href="#case-hub">Intranet migration for 23,000 employees<small>S&amp;P Global</small></a>
+      <a class="card" href="#case-ai">AI agents that automate QA validation<small>BuzzRx</small></a>
+      <a class="card" href="#case-prog">Billing platform retired, governance adopted<small>Avalara</small></a>
+    </div>
+  </div>
+</div></header>
+
+<section class="band" id="work"><div class="wrap">
+  <h2>Selected work</h2>
+  <p class="where">Client names are kept general and no confidential details are shared.</p>
+  <div class="cases">
+    <article class="case" id="case-uat"><h3>Improving UAT readiness across concurrent releases</h3><p class="where">Technical Product Owner, BuzzRx (healthcare)</p>
+      <dl><dt>Problem</dt><dd>Releases across about eight client websites and a mobile app were reaching production with avoidable defects.</dd>
+      <dt>What I did</dt><dd>Introduced early validations, UAT demos with business stakeholders and post-release validations, and set a Definition of Ready and Done the team works to.</dd>
+      <dt>Outcome</dt><dd class="out">Fewer defects and smoother releases.</dd></dl></article>
+    <article class="case" id="case-dash"><h3>Fixing slow claims-volume dashboards for a pharmacy client</h3><p class="where">Technical Product Owner, BuzzRx</p>
+      <dl><dt>Problem</dt><dd>A national pharmacy client had six months of complaints about slow, hard-to-use custom dashboards after a move from Power BI to Tableau.</dd>
+      <dt>What I did</dt><dd>Partnered with the client partner, gathered the real requirements and wrote the developer stories behind the fix.</dd>
+      <dt>Outcome</dt><dd class="out">Faster load times and positive client feedback.</dd></dl></article>
+    <article class="case" id="case-hub"><h3>Selecting and migrating an intranet platform for 23,000 employees</h3><p class="where">Technical Product Owner, S&amp;P Global (financial services)</p>
+      <dl><dt>Problem</dt><dd>The company needed a modern intranet and collaboration platform to replace its legacy one.</dd>
+      <dt>What I did</dt><dd>Led the RFI and RFP, wrote the business case, helped select the vendor, then managed the migration: content inventory, metadata, access and permissions, and SharePoint, OneDrive and Microsoft 365 integration.</dd>
+      <dt>Outcome</dt><dd class="out">Went live for 23,000 employees with training, communications and support in place.</dd></dl></article>
+    <article class="case" id="case-ai"><h3>Bringing AI agents into QA validation</h3><p class="where">Technical Product Owner, BuzzRx</p>
+      <dl><dt>Problem</dt><dd>Manual QA checks slowed each release.</dd>
+      <dt>What I did</dt><dd>Coordinated the QA team's project to build Claude AI agents that automate QA validation: scope and priorities with the QA lead, acceptance criteria for what the agents check, and the rollout plan from pilot into the release process.</dd>
+      <dt>Outcome</dt><dd class="out">Automated validation became part of the release process.</dd></dl></article>
+    <article class="case wide" id="case-prog"><h3>Leading two programs: retiring a billing platform and rolling out IT governance</h3><p class="where">Sr. Technical Program Manager, Avalara</p>
+      <dl><dt>Problem</dt><dd>The engineering organization needed to retire Zuora, a billing platform many teams depended on, and get technology teams following new IT governance requirements, both without disrupting delivery.</dd>
+      <dt>What I did</dt><dd>Built multi-quarter program plans with scope, objectives and deliverables; mapped end-to-end process flows with leadership, solution architects and engineers; tracked risks, dependencies and impediments across workstreams; built the organizational change management plan and release communication schedules; coordinated release change approvals in ServiceNow; and reported status, milestones, risks and decisions to the steering committee from Jira dashboards.</dd>
+      <dt>Outcome</dt><dd class="out">Took Zuora from planning through retirement and drove awareness and adherence to governance requirements across technology teams.</dd></dl></article>
+  </div>
+</div></section>
+
+<section class="band how" id="approach"><div class="wrap">
+  <h2>How I work</h2>
+  <div class="grid4">
+    <div><h3>Start with the real need</h3><p>I sit with the people doing the work, map how it happens today and separate the underlying need from the requested feature.</p></div>
+    <div><h3>Write it so nobody guesses</h3><p>Stories with Gherkin acceptance criteria, edge cases and non-functional targets that engineers can build and QA can test.</p></div>
+    <div><h3>Prioritize in the open</h3><p>Trade-offs on value, risk, dependencies and capacity are visible, so stakeholders know what comes out when something goes in.</p></div>
+    <div><h3>Run the program, not just the backlog</h3><p>Multi-quarter plans, dependencies across teams, steering committee updates and change management, so leaders always know where things stand.</p></div>
+    <div><h3>Prove it worked</h3><p>UAT before every release, then adoption, uptime and feedback afterward to decide what to improve next.</p></div>
+  </div>
+</div></section>
+
+<section class="band" id="sample"><div class="wrap sample">
+  <div>
+    <h2>A sample of my requirements</h2>
+    <p>Most of my work lives in Jira, Azure DevOps and Confluence. I write acceptance criteria as Gherkin scenarios (Given, When, Then) so engineers know exactly what to build and QA can turn each scenario straight into a test case, including edge cases and data-driven examples.</p><p>Here is the shape of a typical story, written for an illustrative feature rather than a real product.</p>
+    <p class="note">Sample content for illustration only.</p>
+  </div>
+  <div class="story">
+    <header><span>Story: appointment reminder preferences</span><span>Priority: high</span></header>
+    <div class="body">
+      <p><code>As a</code> customer, <code>I want</code> to choose how I receive reminders, <code>so that</code> I don't miss a booked visit.</p>
+      <strong>Acceptance criteria (Gherkin)</strong>
+      <div class="gk"><span class="kw">Feature:</span> Reminder preferences
+
+<span class="kw">Scenario:</span> Customer chooses a reminder channel
+  <span class="kw">Given</span> I have an upcoming booking
+  <span class="kw">When</span> I open reminder settings
+  <span class="kw">Then</span> I can choose email, SMS, both or none
+
+<span class="kw">Scenario:</span> SMS requires a verified phone number
+  <span class="kw">Given</span> I have not verified my phone number
+  <span class="kw">When</span> I select SMS and save
+  <span class="kw">Then</span> I am asked to verify my number before the preference is saved
+
+<span class="kw">Scenario Outline:</span> Reminders follow the saved preference
+  <span class="kw">Given</span> my saved preference is "&lt;channel&gt;"
+  <span class="kw">When</span> my next reminder is due
+  <span class="kw">Then</span> it is sent by "&lt;delivery&gt;"
+  <span class="kw">And</span> the change is logged with a timestamp
+
+  <span class="kw">Examples:</span>
+    | channel | delivery      |
+    | email   | email         |
+    | sms     | SMS           |
+    | both    | email and SMS |
+    | none    | not sent      |</div>
+      <strong>Out of scope</strong><p>Reminder timing rules (separate story).</p>
+      <strong>QA notes</strong><p>Test unverified numbers, opted-out users and bookings made less than 24 hours ahead.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="band how" id="experience"><div class="wrap two">
+  <div>
+    <h2>Experience</h2>
+    <div class="tl">
+      <div class="row"><time>2024 to present</time><div><strong>Technical Product Owner, BuzzRx</strong><br>Headless web platform, mobile app and CMS in healthcare</div></div>
+      <div class="row"><time>2024</time><div><strong>Sr. Technical Program Manager, Avalara</strong><br>Led the IT Governance and Zuora Deprecation programs, reporting to a steering committee</div></div>
+      <div class="row"><time>2017 to 2024</time><div><strong>Technical Product Owner, S&amp;P Global</strong><br>Intranet, data platform and internal tools in a SAFe environment</div></div>
+      <div class="row"><time>2008 to 2017</time><div><strong>Software Developer</strong><br>S&amp;P Global, Iron Data and V&amp;K Consulting: web apps, APIs and integrations</div></div>
+    </div>
+  </div>
+  <div>
+    <h2>Skills and tools</h2>
+    <div class="chips"><span>Product ownership</span><span>Business analysis</span><span>Technical program management</span><span>Multi-quarter program planning</span><span>Risk and dependency management</span><span>Steering committee and executive reporting</span><span>Organizational change management</span><span>Release and change approvals</span><span>Agile, Scrum, SAFe</span><span>UAT and release readiness</span><span>Gherkin acceptance criteria</span><span>REST APIs</span><span>SQL</span><span>Jira</span><span>Confluence</span><span>Azure DevOps</span><span>ServiceNow</span><span>Power BI</span><span>Tableau</span><span>Figma</span><span>Postman</span><span>Datadog</span><span>Claude Code</span><span>Glean</span></div>
+    <div class="certs"><div><strong>PMP</strong><span class="note">Project Management Professional</span></div><div><strong>CSPO</strong><span class="note">Certified Scrum Product Owner</span></div><div><strong>CSM</strong><span class="note">Certified ScrumMaster</span></div></div>
+  </div>
+</div></section>
+
+<footer class="band" id="contact"><div class="wrap">
+  <div><h2>Let's talk</h2><p>Open to Technical Product Owner, Program Manager and Business Analyst roles, full-time or contract. Based in Raleigh, North Carolina, US Eastern Time.</p></div>
+  <div><div class="btns"><a class="btn" href="https://www.linkedin.com/in/kranthikchiluveru/">LinkedIn profile</a><a class="btn alt" href="mailto:kranthikc8@gmail.com">Email me</a></div><p class="note" style="color:inherit;margin-top:10px">kranthikc8@gmail.com</p></div>
+</div></footer>
+</body>
+</html>
